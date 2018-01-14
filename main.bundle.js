@@ -204,7 +204,7 @@ var DataService = (function () {
         this.http = http;
         this.searchData = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]([]);
         this.searchDataObservable = this.searchData.asObservable();
-        this.endpoint = 'http://itunes.apple.com/search';
+        this.endpoint = 'https://itunes.apple.com/search';
         this.term = '';
         this.limit = 0;
     }

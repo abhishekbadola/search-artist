@@ -8,11 +8,11 @@
       <label for="artist-name">Artist name
       </label>
       <input [(ngModel)]="term" id="artist-name" name="artist-name" type="text" maxlength="4" pattern="[jJ][aA][cC][kK]" title="Enter 'jack' as an artist name"
-        placeholder="e.g. jack...">
+        placeholder="e.g. jack..." required>
       <label for="tracks-count">No. of tracks
       </label>
       <input [(ngModel)]="limit" id="tracks-count" name="tracks-count" type="number" min="4" max="4" title="Enter '4' as number of tracks"
-        placeholder="e.g. 4...">
+        placeholder="e.g. 4..." required>
       <label></label>
       <span>
         <button class="btn">Search</button>

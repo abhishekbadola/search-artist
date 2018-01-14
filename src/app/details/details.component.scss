@@ -1,0 +1,30 @@
+main {
+  padding: 3%;
+  small {
+    font-size: 15px;
+  }
+  .details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    img {
+      height: 60px;
+    }
+    strong {
+      margin-bottom: 10px;
+    }
+    .results-list {
+      width: 70%;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
+
+.clear {
+  color: #00b1b1;
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: #007474;
+}

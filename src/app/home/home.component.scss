@@ -1,0 +1,31 @@
+%flex-centered {
+  display: flex;
+  align-items: center;
+}
+
+%center-align {
+  justify-content: center;
+}
+
+main {
+  @extend %flex-centered;
+  @extend %center-align;
+  height: 100vh;
+  section {
+    position: relative;
+    text-align: center;
+    h1 {
+      font-size: 2em;
+    }
+    figure.img-arrow {
+      position: absolute;
+      left: -25%;
+      transform: rotate(-30deg);
+      bottom: -25%;
+      img {
+        height: 80%;
+        width: 80%;
+      }
+    }
+  }
+}

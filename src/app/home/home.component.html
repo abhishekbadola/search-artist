@@ -1,0 +1,12 @@
+<main>
+  <section>
+      <figure class="img-arrow">
+        <img src="./assets/images/arrow.png">
+      </figure>
+      <h1>Find your artist below</h1>
+      <button class="btn" (click)="openModal()">
+        Search Artist
+      </button>
+  </section>
+  <app-modal *ngIf="showModal" (close)="showModal = false"></app-modal>
+</main>

@@ -1,0 +1,23 @@
+<main>
+  <h1>
+    Search results for &#8220;{{ term }}&#8221;. &nbsp;&nbsp;
+    <a class="clear" (click)="clear()"><small>( Clear )</small></a>
+  </h1>
+  <section *ngFor="let result of results" class="details">
+    <figure>
+      <img [src]="result.artworkUrl30" alt="Artist Image">
+    </figure>
+    <section class="results-list">
+      <label>
+          <strong>Artist name : &nbsp;</strong><strong>{{ result.artistName }}</strong>
+      </label> 
+      <br>
+      <label>
+          <strong>Track name : &nbsp;</strong><strong>{{ result.trackName }}</strong>
+      </label>
+      <p>
+        {{ result.shortDescription ? result.shortDescription : result.longDescription.substr(0, 50) + '...' }}
+      </p>
+    </section>
+  </section>
+</main>

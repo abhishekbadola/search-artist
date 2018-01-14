@@ -9,7 +9,7 @@ export class DataService {
   private searchData = new BehaviorSubject<any>([]);
   searchDataObservable = this.searchData.asObservable();
 
-  private endpoint = 'http://itunes.apple.com/search';
+  private endpoint = 'https://itunes.apple.com/search';
 
   constructor(private http: HttpClient) { }
 

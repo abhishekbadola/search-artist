@@ -1,5 +1,16 @@
 # SearchArtist
 
+>Angular 5 app to search by artist name (Currently validation is only on name as 'Jack' and number of tracks as '4').
+>HTML semantic markups and attribute based validations are made.
+___
+
+
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
 
 ## Development server

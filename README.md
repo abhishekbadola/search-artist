@@ -2,6 +2,8 @@
 
 >Angular 5 app to search by artist name (Currently validation is only on name as 'Jack' and number of tracks as '4').
 >HTML semantic markups and attribute based validations are made.
+
+**[LIVE DEMO](https://abhishekbadola.github.io/search-artist/)**
 ___
 
 

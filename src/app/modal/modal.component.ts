@@ -27,15 +27,13 @@ export class ModalComponent implements OnInit {
   searchResults(e) { // Calling data service to fetch data from API
     e.preventDefault(); // To stop default page refresh behaviour
 
-    if (this.term.toLowerCase() === 'jack' && this.limit === 4) {
-      this.showLoader = true;
-      setTimeout(() => { // Just to show loading image
-        this._data.getResults(this.term, this.limit)
-          .subscribe(res => { // Route to details page when data has been loaded
-            this.showLoader = false;
-            this.router.navigate(['/details']);
-          });
-      }, 1000);
-    }
+    this.showLoader = true;
+    setTimeout(() => { // Just to show loading image
+      this._data.getResults(this.term, this.limit)
+        .subscribe(res => { // Route to details page when data has been loaded
+          this.showLoader = false;
+          this.router.navigate(['/details']);
+        });
+    }, 1000);
   }
 }

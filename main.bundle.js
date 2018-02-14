@@ -447,16 +447,14 @@ var ModalComponent = (function () {
     ModalComponent.prototype.searchResults = function (e) {
         var _this = this;
         e.preventDefault(); // To stop default page refresh behaviour
-        if (this.term.toLowerCase() === 'jack' && this.limit === 4) {
-            this.showLoader = true;
-            setTimeout(function () {
-                _this._data.getResults(_this.term, _this.limit)
-                    .subscribe(function (res) {
-                    _this.showLoader = false;
-                    _this.router.navigate(['/details']);
-                });
-            }, 1000);
-        }
+        this.showLoader = true;
+        setTimeout(function () {
+            _this._data.getResults(_this.term, _this.limit)
+                .subscribe(function (res) {
+                _this.showLoader = false;
+                _this.router.navigate(['/details']);
+            });
+        }, 1000);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */])(),

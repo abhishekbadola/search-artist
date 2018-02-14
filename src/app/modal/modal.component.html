@@ -7,11 +7,11 @@
     <form id="search-criteria-form" (submit)="searchResults($event)" ngNativeValidate>
       <label for="artist-name">Artist name
       </label>
-      <input [(ngModel)]="term" id="artist-name" name="artist-name" type="text" maxlength="4" pattern="[jJ][aA][cC][kK]" title="Enter 'jack' as an artist name"
+      <input [(ngModel)]="term" id="artist-name" name="artist-name" type="text" title="Artist name is required.."
         placeholder="e.g. jack..." required>
       <label for="tracks-count">No. of tracks
       </label>
-      <input [(ngModel)]="limit" id="tracks-count" name="tracks-count" type="number" min="4" max="4" title="Enter '4' as number of tracks"
+      <input [(ngModel)]="limit" id="tracks-count" name="tracks-count" type="number" min="1" max="10" title="Enter number of tracks from 1 to 10.."
         placeholder="e.g. 4..." required>
       <label></label>
       <span>

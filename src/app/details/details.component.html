@@ -5,7 +5,7 @@
   </h1>
   <section *ngFor="let result of results" class="details">
     <figure>
-      <img [src]="result.artworkUrl30" alt="Artist Image">
+      <img [src]="result.artworkUrl100" alt="Artist Image">
     </figure>
     <section class="results-list">
       <label>
@@ -16,7 +16,7 @@
           <strong>Track name : &nbsp;</strong><strong>{{ result.trackName }}</strong>
       </label>
       <p>
-        {{ result.shortDescription ? result.shortDescription : result.longDescription.substr(0, 50) + '...' }}
+        {{ result.shortDescription ? result.shortDescription : (result.longDescription ? result.longDescription.substring(0, 50) + '...' : 'N/A') }}
       </p>
     </section>
   </section>

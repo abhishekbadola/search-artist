@@ -18,12 +18,13 @@ export class DataService {
 
   getResults(term, limit): Observable<any[]> {
     const data = this.searchData.value;
+    let endpoint = this.endpoint;
 
-    if (!data.length) {
+    if (!data.length && this.term !== term && this.limit !== limit) {
       this.term = term;
       this.limit = limit;
-      this.endpoint += ('?term=' + term + '&limit=' + limit);
-      return this.http.get<any>(this.endpoint).map(
+      endpoint += ('?term=' + term + '&limit=' + limit);
+      return this.http.get<any>(endpoint).map(
         res => {
           this.searchData.next(res.results);
           return res;

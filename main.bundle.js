@@ -211,11 +211,12 @@ var DataService = (function () {
     DataService.prototype.getResults = function (term, limit) {
         var _this = this;
         var data = this.searchData.value;
-        if (!data.length) {
+        var endpoint = this.endpoint;
+        if (!data.length && this.term !== term && this.limit !== limit) {
             this.term = term;
             this.limit = limit;
-            this.endpoint += ('?term=' + term + '&limit=' + limit);
-            return this.http.get(this.endpoint).map(function (res) {
+            endpoint += ('?term=' + term + '&limit=' + limit);
+            return this.http.get(endpoint).map(function (res) {
                 _this.searchData.next(res.results);
                 return res;
             });
@@ -244,7 +245,7 @@ var DataService = (function () {
 /***/ "../../../../../src/app/details/details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main>\n  <h1>\n    Search results for &#8220;{{ term }}&#8221;. &nbsp;&nbsp;\n    <a class=\"clear\" (click)=\"clear()\"><small>( Clear )</small></a>\n  </h1>\n  <section *ngFor=\"let result of results\" class=\"details\">\n    <figure>\n      <img [src]=\"result.artworkUrl30\" alt=\"Artist Image\">\n    </figure>\n    <section class=\"results-list\">\n      <label>\n          <strong>Artist name : &nbsp;</strong><strong>{{ result.artistName }}</strong>\n      </label> \n      <br>\n      <label>\n          <strong>Track name : &nbsp;</strong><strong>{{ result.trackName }}</strong>\n      </label>\n      <p>\n        {{ result.shortDescription ? result.shortDescription : result.longDescription.substr(0, 50) + '...' }}\n      </p>\n    </section>\n  </section>\n</main>\n"
+module.exports = "<main>\n  <h1>\n    Search results for &#8220;{{ term }}&#8221;. &nbsp;&nbsp;\n    <a class=\"clear\" (click)=\"clear()\"><small>( Clear )</small></a>\n  </h1>\n  <section *ngFor=\"let result of results\" class=\"details\">\n    <figure>\n      <img [src]=\"result.artworkUrl100\" alt=\"Artist Image\">\n    </figure>\n    <section class=\"results-list\">\n      <label>\n          <strong>Artist name : &nbsp;</strong><strong>{{ result.artistName }}</strong>\n      </label> \n      <br>\n      <label>\n          <strong>Track name : &nbsp;</strong><strong>{{ result.trackName }}</strong>\n      </label>\n      <p>\n        {{ result.shortDescription ? result.shortDescription : (result.longDescription ? result.longDescription.substring(0, 50) + '...' : 'N/A') }}\n      </p>\n    </section>\n  </section>\n</main>\n"
 
 /***/ }),
 
@@ -256,7 +257,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "main {\n  padding: 3%; }\n  main small {\n    font-size: 15px; }\n  main .details {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    margin-bottom: 30px; }\n    main .details img {\n      height: 60px; }\n    main .details strong {\n      margin-bottom: 10px; }\n    main .details .results-list {\n      width: 70%;\n      border-bottom: 1px solid #ccc; }\n\n.clear {\n  color: #00b1b1;\n  cursor: pointer; }\n\n.clear:hover {\n  color: #007474; }\n", ""]);
+exports.push([module.i, "main {\n  padding: 3%; }\n  main small {\n    font-size: 15px; }\n  main .details {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    margin-bottom: 30px; }\n    main .details img {\n      height: 60px;\n      width: 60px;\n      -o-object-fit: cover;\n         object-fit: cover; }\n    main .details strong {\n      margin-bottom: 10px; }\n    main .details .results-list {\n      width: 70%;\n      border-bottom: 1px solid #ccc; }\n\n.clear {\n  color: #00b1b1;\n  cursor: pointer; }\n\n.clear:hover {\n  color: #007474; }\n", ""]);
 
 // exports
 

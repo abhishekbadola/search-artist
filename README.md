@@ -11,7 +11,10 @@ ___
 
 
 
-
+**Deployment to Github Pages**
+>$ npm i -g angular-cli-ghpages (Only in case you don't have angular-cli-ghpages installed)
+>$ ng build --env=prod --base-href="https://YOUR_USERNAME.github.io/REPO_NAME/"
+>$ angular-cli-pages
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
 
